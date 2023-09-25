@@ -15,16 +15,20 @@ import com.mountain.backend.mountain.service.MountainService;
 import com.mountain.backend.mountain.service.TestService;
 import com.mountain.backend.security.auth.UserDetailsImpl;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
+@Tag(name = "등산로 조회", description = "등산로 조회 api")
 public class MountainController {
 
 	private final TestService testService;
 	private final MountainService mountainService;
 
 	//모든 등산조회
+	@Operation(summary = "등산로 전체조회 API", description = "등산로조회")
 	@GetMapping("/api/main/mountains")
 	public ResponseEntity<Message> findAll(){
 

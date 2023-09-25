@@ -67,6 +67,7 @@ public class WebSecurityConfig {
 
 			.requestMatchers("/api/user/kakao/**").permitAll()
 			.requestMatchers("/api/main/start/**").permitAll()
+			.requestMatchers("/swagger-ui/**").permitAll()
 
 			.requestMatchers("/api/main/mountains").permitAll()
 			.requestMatchers(PathRequest.toH2Console()).permitAll()
@@ -99,7 +100,7 @@ public class WebSecurityConfig {
 		configuration.addAllowedOrigin("*");
 
 
-		// configuration.addAllowedOrigin("http://localhost:8080");
+		configuration.addAllowedOrigin("http://localhost:8080");
 
 
 		//모든 방식(GET, POST, PUT, DELETE 등)으로 데이터를 요청할 수 있게함
